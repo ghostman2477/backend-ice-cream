@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ice-cream-parlour
+
+server:
+  port: 7017
