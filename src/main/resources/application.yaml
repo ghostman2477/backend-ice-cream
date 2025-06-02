@@ -3,4 +3,5 @@ spring:
     name: ice-cream-parlour
 
 server:
+  address: 0.0.0.0
   port: 7017
