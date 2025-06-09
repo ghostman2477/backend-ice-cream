@@ -8,6 +8,14 @@ public class FlavourEntity {
     @Id
     private String flavourId;
 
+    public FlavourEntity() {
+    }
+
+    public FlavourEntity(String flavourId, String flavour) {
+        this.flavourId = flavourId;
+        this.flavour = flavour;
+    }
+
     public String getFlavour() {
         return flavour;
     }
@@ -25,4 +33,12 @@ public class FlavourEntity {
     }
 
     private String flavour;
+
+    @Override
+    public String toString() {
+        return "FlavourEntity{" +
+                "flavourId='" + flavourId + '\'' +
+                ", flavour='" + flavour + '\'' +
+                '}';
+    }
 }

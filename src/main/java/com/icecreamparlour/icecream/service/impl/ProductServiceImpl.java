@@ -13,6 +13,8 @@ import com.icecreamparlour.icecream.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class ProductServiceImpl implements ProductService {
     @Autowired
@@ -29,9 +31,16 @@ public class ProductServiceImpl implements ProductService {
         ProductEntity productEntity = new ProductEntity();
         productEntity.setProductName(productRequest.getProductName());
         productEntity.setProductPrice(productRequest.getProductPrice());
+
         System.out.println(productRequest.getBrandName());
-        BrandEntity brand = brandRepository.findBybrandName(productRequest.getBrandName());
-        productEntity.setBrandId(brand.getBrandId());
+
+        Optional<BrandEntity> brand = brandRepository.findByBrandName(productRequest.getBrandName());
+        if (brand.isPresent()) {
+            productEntity.setBrandId(brand.get().getBrandId());
+        } else {
+            throw new RuntimeException("Brand not found: " + productRequest.getBrandName());
+        }
+
         FlavourEntity flavourEntity = flavourRepository.findByFlavour(productRequest.getFlavourName());
         CategoryEntity categoryEntity = categoryRepository.findByCategoryName(productRequest.getCategory());
         productEntity.setInStock(productRequest.getInStock());
@@ -40,6 +49,7 @@ public class ProductServiceImpl implements ProductService {
         productEntity.setIndividualDiscount(productRequest.getIndividualDiscount());
         productEntity.setPartyDiscount(productRequest.getPartyDiscount());
         productEntity.setProductImageUrl(productRequest.getProductImageUrl());
+
         return productRepository.save(productEntity);
     }
 }
