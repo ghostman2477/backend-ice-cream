@@ -15,7 +15,7 @@ public class BrandController {
     @Autowired
     private BrandService brandService;
 
-    @PostMapping("/savebrand")
+    @PostMapping("/save-brand")
     public ResponseEntity<String> saveBrand(@RequestBody BrandRequest brandRequest){
         brandService.saveBrand(brandRequest);
         return new ResponseEntity<String>("Saved Successfully", HttpStatus.OK);
