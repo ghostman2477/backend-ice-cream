@@ -7,18 +7,19 @@ public class ProductRequest {
     private String brandName;
     private String flavourName;
     private String category;
-    private String partyDiscount;
-    private String individualDiscount;
+    private int partyDiscount;
+    private int individualDiscount;
+    private int inStock;
 
-    public String getInStock() {
+    public int getInStock() {
         return inStock;
     }
 
-    public void setInStock(String inStock) {
+    public void setInStock(int inStock) {
         this.inStock = inStock;
     }
 
-    private String inStock;
+
 
     public String getProductImageUrl() {
         return productImageUrl;
@@ -70,19 +71,19 @@ public class ProductRequest {
         this.category = category;
     }
 
-    public String getPartyDiscount() {
+    public int getPartyDiscount() {
         return partyDiscount;
     }
 
-    public void setPartyDiscount(String partyDiscount) {
+    public void setPartyDiscount(int partyDiscount) {
         this.partyDiscount = partyDiscount;
     }
 
-    public String getIndividualDiscount() {
+    public int getIndividualDiscount() {
         return individualDiscount;
     }
 
-    public void setIndividualDiscount(String individualDiscount) {
+    public void setIndividualDiscount(int individualDiscount) {
         this.individualDiscount = individualDiscount;
     }
 

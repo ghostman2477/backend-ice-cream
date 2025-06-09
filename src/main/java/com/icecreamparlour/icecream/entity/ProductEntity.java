@@ -12,18 +12,44 @@ public class ProductEntity {
     private String brandId;
     private String flavourId;
     private String category;
-
-    public String getInStock() {
+    public int getInStock() {
         return inStock;
     }
 
-    public void setInStock(String inStock) {
+    public void setInStock(int inStock) {
         this.inStock = inStock;
     }
 
-    private String inStock;
-    private String partyDiscount;
-    private String individualDiscount;
+    private int inStock;
+    private int partyDiscount;
+    private int individualDiscount;
+    private String brandName;
+    private String flavourName;
+    private String categoryName;
+
+    private String productImageUrl;
+
+    public ProductEntity() {
+    }
+
+    public ProductEntity(String productId, String productName, String productPrice,
+                         String brandId, String flavourId, String category, int inStock,
+                         int partyDiscount, int individualDiscount,  String productImageUrl,String brandName,
+                         String flavourName, String categoryName) {
+        this.productId = productId;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.brandId = brandId;
+        this.flavourId = flavourId;
+        this.category = category;
+        this.inStock = inStock;
+        this.partyDiscount = partyDiscount;
+        this.individualDiscount = individualDiscount;
+        this.brandName = brandName;
+        this.flavourName = flavourName;
+        this.categoryName = categoryName;
+        this.productImageUrl = productImageUrl;
+    }
 
     public String getProductImageUrl() {
         return productImageUrl;
@@ -32,8 +58,6 @@ public class ProductEntity {
     public void setProductImageUrl(String productImageUrl) {
         this.productImageUrl = productImageUrl;
     }
-
-    private  String productImageUrl;
 
     public String getProductName() {
         return productName;
@@ -75,19 +99,19 @@ public class ProductEntity {
         this.flavourId = flavourId;
     }
 
-    public String getPartyDiscount() {
+    public int getPartyDiscount() {
         return partyDiscount;
     }
 
-    public void setPartyDiscount(String partyDiscount) {
+    public void setPartyDiscount(int partyDiscount) {
         this.partyDiscount = partyDiscount;
     }
 
-    public String getIndividualDiscount() {
+    public int getIndividualDiscount() {
         return individualDiscount;
     }
 
-    public void setIndividualDiscount(String individualDiscount) {
+    public void setIndividualDiscount(int individualDiscount) {
         this.individualDiscount = individualDiscount;
     }
 
