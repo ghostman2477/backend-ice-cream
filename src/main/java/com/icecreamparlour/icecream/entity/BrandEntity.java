@@ -9,6 +9,14 @@ public class BrandEntity {
     private String brandId;
     private String brandName;
 
+    public BrandEntity() {
+    }
+
+    public BrandEntity(String brandId, String brandName) {
+        this.brandId = brandId;
+        this.brandName = brandName;
+    }
+
     public String getBrandName() {
         return brandName;
     }
@@ -25,6 +33,11 @@ public class BrandEntity {
         this.brandId = brandId;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "BrandEntity{" +
+                "brandId='" + brandId + '\'' +
+                ", brandName='" + brandName + '\'' +
+                '}';
+    }
 }

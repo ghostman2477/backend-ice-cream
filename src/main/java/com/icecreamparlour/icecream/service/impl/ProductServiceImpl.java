@@ -35,7 +35,7 @@ public class ProductServiceImpl implements ProductService {
         FlavourEntity flavourEntity = flavourRepository.findByFlavour(productRequest.getFlavourName());
         CategoryEntity categoryEntity = categoryRepository.findByCategoryName(productRequest.getCategory());
         productEntity.setInStock(productRequest.getInStock());
-        productEntity.setCategory(categoryEntity.getCategoryId());
+//        productEntity.setCategory(categoryEntity.getCategoryId());
         productEntity.setFlavourId(flavourEntity.getFlavourId());
         productEntity.setIndividualDiscount(productRequest.getIndividualDiscount());
         productEntity.setPartyDiscount(productRequest.getPartyDiscount());

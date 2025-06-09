@@ -18,7 +18,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @PostMapping("/saveproduct")
+    @PostMapping("/save-product")
     public ResponseEntity<String> saveProduct(@RequestBody ProductRequest productRequest){
 
         productService.saveProduct(productRequest);
