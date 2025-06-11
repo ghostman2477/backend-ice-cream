@@ -57,9 +57,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductResponse> getAllProducts() {
-        List<ProductEntity> products = productRepository.findAll();
+    public List<ProductResponse> getAllProducts(String category) {
 
+        CategoryEntity categoryEntity = categoryRepository.findByCategoryName(category);
+        List<ProductEntity> products = productRepository.findByCategory(categoryEntity.getId());
         return products.stream().map(p -> {
             String brandName = brandRepository.findById(p.getBrandId())
                     .map(BrandEntity::getBrandName)
@@ -68,7 +69,6 @@ public class ProductServiceImpl implements ProductService {
             String flavourName = flavourRepository.findById(p.getFlavourId())
                     .map(FlavourEntity::getFlavour)
                     .orElse("Unknown Flavour");
-
             String categoryName = categoryRepository.findById(p.getCategory())
                     .map(CategoryEntity::getCategoryName)
                     .orElse("Unknown Category");

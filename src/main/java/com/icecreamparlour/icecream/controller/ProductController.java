@@ -26,8 +26,9 @@ public class ProductController {
     }
 
     @GetMapping("/fetch-product")
-    public ResponseEntity<List<ProductResponse>> getAllProducts() {
-        List<ProductResponse> productResponses = productService.getAllProducts();
+    public ResponseEntity<List<ProductResponse>> getAllProducts(@RequestParam String category) {
+        List<ProductResponse> productResponses = productService.getAllProducts(category);
+        System.out.println("OK");
         return ResponseEntity.ok(productResponses);
     }
 
