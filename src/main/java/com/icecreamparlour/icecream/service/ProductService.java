@@ -12,5 +12,5 @@ public interface ProductService {
 
     ProductEntity saveProduct(ProductRequest ProductRequest);
 
-    List<ProductResponse> getAllProducts();
+    List<ProductResponse> getAllProducts(String category);
 }

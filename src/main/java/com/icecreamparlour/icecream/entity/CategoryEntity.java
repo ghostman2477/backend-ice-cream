@@ -8,12 +8,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class CategoryEntity {
 
     @Id
-    private String Id;
+    private String id;
     private String categoryName;
     private String categoryImageURL;
 
-    public CategoryEntity(String Id, String categoryName, String categoryImageURL) {
-        this.Id = Id;
+    public CategoryEntity(String id, String categoryName, String categoryImageURL) {
+        this.id = id;
         this.categoryName = categoryName;
         this.categoryImageURL = categoryImageURL;
     }
@@ -22,11 +22,11 @@ public class CategoryEntity {
     }
 
     public String getId() {
-        return Id;
+        return id;
     }
 
     public void setId(String Id) {
-        this.Id = Id;
+        this.id = Id;
     }
 
     public String getCategoryName() {
@@ -48,7 +48,7 @@ public class CategoryEntity {
     @Override
     public String toString() {
         return "CategoryEntity{" +
-                "id='" + Id + '\'' +
+                "id='" + id + '\'' +
                 ", categoryName='" + categoryName + '\'' +
                 ", categoryImageURL='" + categoryImageURL + '\'' +
                 '}';
