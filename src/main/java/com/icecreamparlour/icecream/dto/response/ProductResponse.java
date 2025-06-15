@@ -1,6 +1,8 @@
 package com.icecreamparlour.icecream.dto.response;
 
 public class ProductResponse {
+
+    private String productId;
     private String productName;
     private String productPrice;
     private int inStock;
@@ -14,7 +16,8 @@ public class ProductResponse {
     public ProductResponse() {
     }
 
-    public ProductResponse(String productName, String productPrice, int inStock, int partyDiscount, int individualDiscount, String productImageUrl, String brandName, String flavourName, String categoryName) {
+    public ProductResponse(String productId,String productName, String productPrice, int inStock, int partyDiscount, int individualDiscount, String productImageUrl, String brandName, String flavourName, String categoryName) {
+        this.productId = productId;
         this.productName = productName;
         this.productPrice = productPrice;
         this.inStock = inStock;
@@ -24,6 +27,13 @@ public class ProductResponse {
         this.brandName = brandName;
         this.flavourName = flavourName;
         this.categoryName = categoryName;
+    }
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
     public String getProductName() {
