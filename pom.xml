@@ -48,7 +48,8 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<version>1.18.38</version> <!-- or the latest stable -->
+			<scope>provided</scope> <!-- 'provided' is the correct scope -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
