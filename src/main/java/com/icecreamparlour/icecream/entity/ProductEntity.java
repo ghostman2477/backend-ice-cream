@@ -12,18 +12,12 @@ public class ProductEntity {
     private String brandId;
     private String flavourId;
     private String category;
-    public int getInStock() {
-        return inStock;
-    }
-
-    public void setInStock(int inStock) {
-        this.inStock = inStock;
-    }
 
     private int inStock;
     private int partyDiscount;
     private int individualDiscount;
     private String brandName;
+
     private String flavourName;
     private String categoryName;
 
@@ -51,6 +45,37 @@ public class ProductEntity {
         this.productImageUrl = productImageUrl;
     }
 
+    public String getFlavourName() {
+        return flavourName;
+    }
+
+    public void setFlavourName(String flavourName) {
+        this.flavourName = flavourName;
+    }
+
+    public String getBrandName() {
+        return brandName;
+    }
+
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+    public int getInStock() {
+        return inStock;
+    }
+
+    public void setInStock(int inStock) {
+        this.inStock = inStock;
+    }
     public String getProductImageUrl() {
         return productImageUrl;
     }
