@@ -28,7 +28,11 @@ public class OrdersServiceImpl implements OrdersService {
         OrdersEntity order = new OrdersEntity();
         order.setName(orderRequest.getName());
         order.setPhone(orderRequest.getPhone());
-        order.setAddress(orderRequest.getAddress());
+        order.setAddressfirstLine(orderRequest.getAddressfirstLine());
+        order.setState("West Bengal");
+        order.setCity(orderRequest.getCity());
+        order.setPincode(orderRequest.getPincode());
+        order.setOrderStatus(orderRequest.getOrderStatus());
 
         // Map and update stock
         List<OrdersEntity.ProductOrder> productOrders = orderRequest.getProducts().stream().map(p -> {
@@ -52,6 +56,6 @@ public class OrdersServiceImpl implements OrdersService {
                 .map(OrdersEntity.ProductOrder::getProductId)
                 .collect(Collectors.toList());
 
-        return new OrdersResponse(savedOrder.getId(), productIds, savedOrder.getName(), savedOrder.getPhone(), savedOrder.getAddress());
+        return new OrdersResponse(savedOrder.getId(), productIds, savedOrder.getName(), savedOrder.getPhone(), savedOrder.getAddressfirstLine(),savedOrder.getCity(), savedOrder.getState(), savedOrder.getPincode(), savedOrder.getOrderStatus());
     }
 }
